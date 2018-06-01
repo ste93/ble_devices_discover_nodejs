@@ -40,7 +40,6 @@ module.exports.publishToServer = function(exchangeName, exchangeType, routingKey
         //here how many times I try the createchannel??
         //TODO save data locally
       } else {
-        
         channel.assertExchange(exchangeName, exchangeType, {durable: isDurable});
         // Note: on Node 6 Buffer.from(msg) should be used
         channel.publish(exchangeName, routingKey, new Buffer(message));
